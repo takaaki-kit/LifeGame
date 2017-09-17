@@ -10,12 +10,12 @@ class CellCreator
         $this->height = $height;
     }
 
-    public function execute()
+    public function initialize()
     {
         $cells = [];
         for($x = 1; $x <= $this->width; $x++){
             for($y = 1; $y <= $this->height; $y++){
-                $cells[] = new Cell($x, $y, false);
+                $cells[$x][$y] = new Cell($x, $y, false);
             }
         }
 
