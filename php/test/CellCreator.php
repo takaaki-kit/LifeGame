@@ -17,4 +17,12 @@ class CellCreatorTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($expect_cells, $cells);
     }
+
+    public function test_指定したセルを生状態にする()
+    {
+        $cell_creator = new CellCreator(2, 2);
+        $cells = $cell_creator->set_alive(1, 2, $cell_creator->initialize());
+
+        $this->assertTrue($cells[1][2]->is_alive());
+    }
 }

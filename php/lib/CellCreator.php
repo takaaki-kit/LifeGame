@@ -21,4 +21,11 @@ class CellCreator
 
         return $cells;
     }
+
+    public function set_alive($x, $y, $cells)
+    {
+        $cells[$x][$y]->set_alive();
+
+        return $cells;
+    }
 }
