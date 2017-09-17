@@ -1,6 +1,7 @@
 <?php
 
 require_once('Cell.php');
+require_once('NullCell.php');
 
 class CellCreator
 {
@@ -13,9 +14,13 @@ class CellCreator
     public function initialize()
     {
         $cells = [];
-        for($x = 1; $x <= $this->width; $x++){
-            for($y = 1; $y <= $this->height; $y++){
-                $cells[$x][$y] = new Cell($x, $y, false);
+        for($x = 0; $x <= $this->width+1; $x++){
+            for($y = 0; $y <= $this->height+1; $y++){
+                if($x == 0 || $y == 0 || $x > $this->width || $y > $this->height){
+                    $cells[$x][$y] = new NullCell($x, $y, false);
+                } else {
+                    $cells[$x][$y] = new Cell($x, $y, false);
+                }
             }
         }
 

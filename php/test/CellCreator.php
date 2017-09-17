@@ -10,10 +10,25 @@ class CellCreatorTest extends PHPUnit_Framework_TestCase
         $cell_creator = new CellCreator(2, 2);
         $cells = $cell_creator->initialize();
 
+        $expect_cells[0][0] = new NullCell(0, 0, false);
+        $expect_cells[1][0] = new NullCell(1, 0, false);
+        $expect_cells[2][0] = new NullCell(2, 0, false);
+        $expect_cells[3][0] = new NullCell(3, 0, false);
+
+        $expect_cells[0][1] = new NullCell(0, 1, false);
         $expect_cells[1][1] = new Cell(1, 1, false);
         $expect_cells[2][1] = new Cell(2, 1, false);
+        $expect_cells[3][1] = new NullCell(3, 1, false);
+
+        $expect_cells[0][2] = new NullCell(0, 2, false);
         $expect_cells[1][2] = new Cell(1, 2, false);
         $expect_cells[2][2] = new Cell(2, 2, false);
+        $expect_cells[3][2] = new NullCell(3, 2, false);
+
+        $expect_cells[0][3] = new NullCell(0, 3, false);
+        $expect_cells[1][3] = new NullCell(1, 3, false);
+        $expect_cells[2][3] = new NullCell(1, 3, false);
+        $expect_cells[3][3] = new NullCell(3, 3, false);
 
         $this->assertEquals($expect_cells, $cells);
     }
