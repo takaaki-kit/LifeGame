@@ -8,4 +8,9 @@ class NullCell
         $this->y = $y;
         $this->status = $status;
     }
+
+    public function is_alive()
+    {
+        return false;
+    }
 }
