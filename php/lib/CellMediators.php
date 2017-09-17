@@ -21,7 +21,6 @@ class CellMediators
                     $this->cells[$this->width][$this->height-1],
                     $this->cells[$this->width+1][$this->height-1],
                     $this->cells[$this->width-1][$this->height],
-                    $this->cells[$this->width][$this->height],
                     $this->cells[$this->width+1][$this->height],
                     $this->cells[$this->width-1][$this->height+1],
                     $this->cells[$this->width][$this->height+1],
