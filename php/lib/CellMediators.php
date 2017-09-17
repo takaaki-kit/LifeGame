@@ -17,14 +17,14 @@ class CellMediators
         for($x = 1; $x <= $this->width; $x++){
             for($y = 1; $y <= $this->height; $y++){
                 $cell_mediators[] = new CellMediator($this->cells[$x][$y], array(
-                    $this->cells[$this->width-1][$this->height-1],
-                    $this->cells[$this->width][$this->height-1],
-                    $this->cells[$this->width+1][$this->height-1],
-                    $this->cells[$this->width-1][$this->height],
-                    $this->cells[$this->width+1][$this->height],
-                    $this->cells[$this->width-1][$this->height+1],
-                    $this->cells[$this->width][$this->height+1],
-                    $this->cells[$this->width+1][$this->height+1],
+                    $this->cells[$x-1][$y-1],
+                    $this->cells[$x][$y-1],
+                    $this->cells[$x+1][$y-1],
+                    $this->cells[$x-1][$y],
+                    $this->cells[$x+1][$y],
+                    $this->cells[$x-1][$y+1],
+                    $this->cells[$x][$y+1],
+                    $this->cells[$x+1][$y+1],
                 ));
             }
         }
