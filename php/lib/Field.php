@@ -2,6 +2,7 @@
 
 require_once('Cell.php');
 require_once('CellCreator.php');
+require_once('CellMediators.php');
 
 class Field
 {
@@ -9,12 +10,19 @@ class Field
 
     public function __construct($x, $y)
     {
+        $this->width = $x;
+        $this->height = $y;
         $this->cell_creator = new CellCreator($x, $y);
     }
 
     public function initialize()
     {
-        return $this->cells = $this->cell_creator->initialize();
+        $this->cells = $this->cell_creator->initialize();
+
+        $cell_mediators = new CellMediators($this->width, $this->height, $this->cells);
+        $this->cell_mediators = $cell_mediators->initialize();
+
+        return $this->cells;
     }
 
     public function set_alive_cell($x, $y)
