@@ -10,7 +10,7 @@ class Field
     public function __construct($x, $y)
     {
         $cell_creator = new CellCreator($x, $y);
-        $this->cells = $cell_creator->execute();
+        $this->cells = $cell_creator->initialize();
     }
 
     public function generate()
