@@ -18,4 +18,13 @@ class Cell
     {
         return $this->status;
     }
+
+	public function has_position($x, $y)
+	{
+		if ($this->x == $x && $this->y == $y) {
+			return true;
+		}
+
+		return false;
+	}
 }
