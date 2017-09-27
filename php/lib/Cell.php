@@ -8,14 +8,14 @@ class Cell
         $this->y = $y;
         $this->status = false;
     }
-#
-#    public function set_alive()
-#    {
-#        $this->status = true;
-#    }
-#
-#    public function is_alive()
-#    {
-#        return $this->status;
-#    }
+
+    public function set_alive()
+    {
+        $this->status = true;
+    }
+
+    public function is_alive()
+    {
+        return $this->status;
+    }
 }
