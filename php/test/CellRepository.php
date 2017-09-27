@@ -13,4 +13,13 @@ class CellRepositoryTest extends PHPUnit_Framework_TestCase
 		$expect = array(new Cell(1, 1));
 		$this->assertEquals($expect, $cell_repository->all());
 	}
+
+	public function test_指定したセルを返す()
+	{
+		$cell_repository = new CellRepository();
+		$cell_repository->add(new Cell(1, 1), new Cell(1, 2), new Cell(2, 1));
+
+		$expect = array(new Cell(1, 2));
+		$this->assertEquals($expect, $cell_repository->at(1, 2));
+	}
 }

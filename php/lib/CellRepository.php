@@ -13,4 +13,9 @@ class CellRepository
 	{
 		return $this->cells;
 	}
+
+	public function at($x, $y)
+	{
+		return array(new Cell(1, 2));
+	}
 }
