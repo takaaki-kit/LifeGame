@@ -18,4 +18,11 @@ class CellTest extends PHPUnit_Framework_TestCase
 
 		$this->assertTrue($cell->has_position(1, 1));
 	}
+
+	public function test_セルの位置が間違っていれば偽()
+	{
+        $cell = new Cell(1, 1);
+
+		$this->assertFalse($cell->has_position(2, 1));
+	}
 }
