@@ -4,12 +4,13 @@ require_once('Cell.php');
 
 class CellRepository
 {
-	public function add()
+	public function add($cell)
 	{
+		$this->cells[] = $cell;
 	}
 
 	public function all()
 	{
-		return array(new Cell(1, 1));
+		return $this->cells;
 	}
 }
