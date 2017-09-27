@@ -14,8 +14,14 @@ class CellRepository
 		return $this->cells;
 	}
 
-	public function at($x, $y)
+	public function set_alive($x, $y)
 	{
-		return array(new Cell(1, 2));
+		foreach ($this->cells as $cell) {
+			if ($cell->has_position($x, $y)) {
+				$cell->set_alive();
+				return true;
+			}
+		}
+		return false;
 	}
 }
